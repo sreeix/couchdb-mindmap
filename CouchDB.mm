@@ -1,6 +1,6 @@
 <map version="0.7.1">
 <node TEXT="CouchDB">
-<node TEXT="Disruptive" FOLDED="true" POSITION="right">
+<node TEXT="Disruptive" POSITION="right">
 <node TEXT="Schema Free">
 <node TEXT="Only _id and _rev"/>
 <node TEXT="Otherwise free to add modify schema">
@@ -61,6 +61,7 @@
 <node TEXT="No Joins"/>
 <node TEXT="No Transactions"/>
 <node TEXT="No Locks to access data"/>
+<node TEXT="No cascades etc."/>
 </node>
 </node>
 <node TEXT="Simple Custering and Replication">
@@ -68,7 +69,7 @@
 <node TEXT="Incremental Replication"/>
 <node TEXT="Designed for offline support"/>
 </node>
-<node TEXT="Simplifies Web development" FOLDED="true">
+<node TEXT="Simplifies Web development">
 <node TEXT="Cuts the boiler Plate Code.."/>
 <node TEXT="No Need to have a middle tier">
 <node TEXT="Browser calls Database Straight up"/>
@@ -107,7 +108,7 @@
 </node>
 <node LINK="http://www.julianbrowne.com/article/viewer/brewers-cap-theorem" TEXT="http://www.julianbrowne.com/article/viewer/brewers-cap-theorem"/>
 </node>
-<node TEXT="The Real Thing" FOLDED="true" POSITION="right">
+<node TEXT="The Real Thing" POSITION="right">
 <node TEXT="Futon">
 <node TEXT="Browser based db administration"/>
 <node TEXT="Hard to Edit Json">
@@ -330,9 +331,39 @@
 </node>
 <node TEXT="The code"/>
 <node TEXT="Modelling">
+<icon BUILTIN="messagebox_warning"/>
 <node TEXT="Blogs">
 <node TEXT="Posts and comments are in same document"/>
 <node TEXT="Different Documents differentiated by type"/>
+</node>
+<node TEXT="Options">
+<node TEXT="Should i create one big document">
+<node TEXT="Easier to manage"/>
+<node TEXT="Self contained"/>
+<node TEXT="Caching is an issue"/>
+<node TEXT="Conflicts happen oftener"/>
+<node TEXT="Slower"/>
+</node>
+<node TEXT="Should i create smaller linked documents">
+<node TEXT="harder to manage">
+<node TEXT="Deletes need to be cascaded"/>
+</node>
+<node TEXT="Lesser chances of conflict"/>
+<node TEXT="Caching small pieces works better"/>
+<node TEXT="Can&apos;t get all in one request">
+<node TEXT="One request for blog and one for the comments"/>
+</node>
+</node>
+<node TEXT="View collation">
+<node TEXT="Smaller Documents, but single query"/>
+</node>
+</node>
+<node TEXT="Choice depends on ">
+<node TEXT="Update frequency">
+<node TEXT="Conflict"/>
+</node>
+<node TEXT="Size of included documents"/>
+<node TEXT="Sometimes Couch may not be the right option"/>
 </node>
 </node>
 </node>
@@ -355,7 +386,7 @@
 </node>
 <node TEXT="http://ruby-toolbox.com/categories/couchdb_clients.html"/>
 </node>
-<node TEXT="Couchapp">
+<node TEXT="Couchapp" FOLDED="true">
 <node TEXT="Like Squeak for Couchapps( Database is the app server)">
 <node TEXT="Check in code to CouchDb">
 <node TEXT="View Templates"/>
@@ -434,7 +465,7 @@
 <node TEXT="Auditing/Logging"/>
 </node>
 </node>
-<node TEXT="Putting the couch online" POSITION="right">
+<node TEXT="Putting the couch online" FOLDED="true" POSITION="right">
 <node TEXT="Clustering">
 <node TEXT="Lounge">
 <node TEXT="Used by meebo"/>
@@ -478,6 +509,7 @@
 <node TEXT="Like queries are tough to do"/>
 </node>
 <node TEXT="Disk sizes of the documents increase quite quickly"/>
+<node TEXT="Harder to model joins"/>
 </node>
 </node>
 </map>
