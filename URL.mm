@@ -17,10 +17,10 @@
 </node>
 </node>
 </node>
-<node TEXT="server" FOLDED="true" POSITION="left">
+<node TEXT="server" POSITION="left">
 <node TEXT="http://127.0.0.1:5984/"/>
 </node>
-<node TEXT="database" FOLDED="true" POSITION="right">
+<node TEXT="database" POSITION="right">
 <node TEXT="http://127.0.0.1:5984/&lt;database_name&gt;">
 <node TEXT="Create">
 <node TEXT="curl -vX PUT http://127.0.0.1:5984/albums"/>
@@ -56,6 +56,16 @@
 <node TEXT="http://127.0.0.1:5984/albums/_all_docs"/>
 </node>
 </node>
+<node TEXT="All Documents">
+<node TEXT="http://127.0.0.1:5984/albums/_all_docs">
+<node TEXT="curl &apos;http://127.0.0.1:5984/foo/_all_docs?include_docs=true&amp;startkey=&quot;ba&quot;&amp;endkey=&quot;bb&quot;&apos; "/>
+</node>
+<node TEXT="Post on _all_docs">
+<node TEXT="Will get you arbitrary keys">
+<node TEXT="curl -d &apos;{&quot;keys&quot;:[&quot;bar&quot;,&quot;baz&quot;]}&apos; -X POST http://127.0.0.1:5984/foo/_all_docs?include_docs=true "/>
+</node>
+</node>
+</node>
 </node>
 <node TEXT="Replication" POSITION="left">
 <node TEXT="http://127.0.0.1:5984/_replicate">
@@ -66,6 +76,12 @@
 </node>
 <node TEXT="View" POSITION="right">
 <node TEXT="http://127.0.0.1:5984/albums/_design/docs_by_date/_view/by_type"/>
+</node>
+<node TEXT="Bulk Changes" POSITION="left">
+<node TEXT="Post">
+<node TEXT="curl -v -d &apos;{&quot;docs&quot;:[{&quot;key&quot;:&quot;baz&quot;,&quot;name&quot;:&quot;bazzel&quot;,_rev=&quot;xxxx&quot;},{&quot;key&quot;:&quot;bar&quot;,&quot;name&quot;:&quot;barry&quot;, _rev=&quot;xxxx&quot;}]}&apos; -X POST $DB/_bulk_docs "/>
+<node TEXT="_deleted on the doc would delete the documents"/>
+</node>
 </node>
 </node>
 </map>

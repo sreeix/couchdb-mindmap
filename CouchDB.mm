@@ -1,6 +1,6 @@
 <map version="0.7.1">
 <node TEXT="CouchDB">
-<node TEXT="Disruptive" POSITION="right">
+<node TEXT="Disruptive" FOLDED="true" POSITION="right">
 <node TEXT="Schema Free">
 <node TEXT="Only _id and _rev"/>
 <node TEXT="Otherwise free to add modify schema">
@@ -76,14 +76,14 @@
 </node>
 </node>
 </node>
-<node TEXT="CAP Theorem" POSITION="left">
+<node TEXT="CAP Theorem" FOLDED="true" POSITION="left">
 <node TEXT="Consistency"/>
 <node TEXT="Availability"/>
 <node TEXT="Partition Tolerance"/>
-<node TEXT="Choose only Two" FOLDED="true">
+<node TEXT="Choose only Two">
 <node TEXT="C-A">
 <node TEXT="SQL DBS"/>
-<node TEXT="Bigtable" FOLDED="true">
+<node TEXT="Bigtable">
 <node TEXT="Replication comes from GFS"/>
 <node TEXT="HBASE"/>
 </node>
@@ -108,15 +108,15 @@
 </node>
 <node LINK="http://www.julianbrowne.com/article/viewer/brewers-cap-theorem" TEXT="http://www.julianbrowne.com/article/viewer/brewers-cap-theorem"/>
 </node>
-<node TEXT="The Real Thing" POSITION="right">
-<node TEXT="Futon">
+<node TEXT="The Real Thing" FOLDED="true" POSITION="right">
+<node TEXT="Futon" FOLDED="true">
 <node TEXT="Browser based db administration"/>
 <node TEXT="Hard to Edit Json">
 <node TEXT="No Validation"/>
 </node>
 </node>
 <node TEXT="Http client/Rest client from code"/>
-<node TEXT="Curl">
+<node TEXT="Curl" FOLDED="true">
 <node TEXT="Easier">
 <node TEXT="Remember to urlencode the url">
 <node TEXT="Spent a couple of hours trying to figure out why couch was not returning the results"/>
@@ -124,11 +124,11 @@
 </node>
 <node TEXT="Harder to remember the syntax"/>
 </node>
-<node TEXT="Old tricks to old dog" FOLDED="true">
+<node TEXT="Old tricks to old dog">
 <node TEXT="select *"/>
 <node TEXT="Count *"/>
 </node>
-<node TEXT="Concepts">
+<node TEXT="Concepts" FOLDED="true">
 <node TEXT="Design Documents">
 <node TEXT="Application">
 <node TEXT="Can be many for a given Database">
@@ -330,7 +330,7 @@
 </node>
 </node>
 <node TEXT="The code"/>
-<node TEXT="Modelling">
+<node TEXT="Modelling" FOLDED="true">
 <icon BUILTIN="messagebox_warning"/>
 <node TEXT="Blogs">
 <node TEXT="Posts and comments are in same document"/>
@@ -367,7 +367,7 @@
 </node>
 </node>
 </node>
-<node TEXT="Frameworks" POSITION="left">
+<node TEXT="Frameworks" FOLDED="true" POSITION="left">
 <node TEXT="Rails/Ruby" FOLDED="true">
 <node TEXT="Mostly provide AR style mapping">
 <node TEXT="Disbelive them">
@@ -411,7 +411,7 @@
 <node TEXT="Jquery plugin to deal with Couchdb"/>
 </node>
 </node>
-<node TEXT="More..." POSITION="left">
+<node TEXT="More..." FOLDED="true" POSITION="left">
 <node TEXT="Clustering Scenarios"/>
 <node TEXT="Offline support"/>
 </node>
@@ -434,13 +434,16 @@
 <node TEXT="Refactoring">
 <node TEXT="Slightly Harder">
 <node TEXT="Same as implementing stuff in database"/>
-<node TEXT="Thoughts"/>
+<node TEXT="Thoughts?"/>
 </node>
 <node TEXT="Not Hard to implement because it is OPEN"/>
 </node>
 <node TEXT="testing">
 <node TEXT="Simple"/>
 <node TEXT="End to end"/>
+<node TEXT="Couch has a big suite of tests">
+<node TEXT="Just follow the pattern"/>
+</node>
 </node>
 <node TEXT="Robust">
 <node TEXT="Write only Btree"/>
@@ -455,7 +458,7 @@
 <node TEXT="Caused by Replication"/>
 <node TEXT="Does not happen because of concurrency"/>
 </node>
-<node TEXT="Simplyfy">
+<node TEXT="Simplify">
 <node TEXT="Undos">
 <node TEXT="just rollback to previous state"/>
 </node>
@@ -484,7 +487,7 @@
 </node>
 </node>
 </node>
-<node TEXT="Off the couch" POSITION="left">
+<node TEXT="Off the couch" FOLDED="true" POSITION="left">
 <node TEXT="Harder to do bulk updates">
 <node TEXT="POST to _bulk_docs">
 <node TEXT="Delete all">

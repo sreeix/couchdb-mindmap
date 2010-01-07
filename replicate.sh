@@ -1,0 +1,1 @@
+curl -vX POST http://127.0.0.1:5984/_replicate -d '{"source":"tw-address-book","target":"tw-address-book-replica"}'
